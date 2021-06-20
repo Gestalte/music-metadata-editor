@@ -1,0 +1,63 @@
+﻿<Window x:Class="windows_music_metadata_editor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:windows_music_metadata_editor"
+        mc:Ignorable="d"
+        Title="Music Meta-data Editor" Height="400" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <TreeView>
+            <TreeViewItem>
+                <TextBlock>Item 1</TextBlock>
+                <TextBlock>Item 2</TextBlock>
+                <TextBlock>Item 3</TextBlock>
+            </TreeViewItem>
+        </TreeView>
+
+        <ListBox Grid.Column="1">
+            <ListBoxItem>Test 1</ListBoxItem>
+            <ListBoxItem>Test 2</ListBoxItem>
+            <ListBoxItem>Test 3</ListBoxItem>
+        </ListBox>
+
+        <StackPanel Grid.Column="2" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Title</TextBlock>
+                <TextBox>Test</TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Album</TextBlock>
+                <TextBox>Test</TextBox>
+                <CheckBox></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Artist</TextBlock>
+                <TextBox>Test</TextBox>
+                <CheckBox></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Year</TextBlock>
+                <TextBox>Test</TextBox>
+                <CheckBox></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Track #</TextBlock>
+                <TextBox>Test</TextBox>
+                <CheckBox></CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Cover</TextBlock>
+                <TextBox>Test</TextBox>
+                <Button>Browse</Button>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>
