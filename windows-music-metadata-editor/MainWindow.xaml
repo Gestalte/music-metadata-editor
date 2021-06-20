@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:windows_music_metadata_editor"
         mc:Ignorable="d"
-        Title="Music Meta-data Editor" Height="400" Width="600">
+        Title="Music Meta-data Editor" MinHeight="200" MinWidth="600" Height="200" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="3*"></ColumnDefinition>
-            <ColumnDefinition Width="7*"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TreeView>
+        <TreeView Name="tvFolders">
             <TreeViewItem>
                 <TextBlock>Item 1</TextBlock>
                 <TextBlock>Item 2</TextBlock>
@@ -21,43 +21,49 @@
             </TreeViewItem>
         </TreeView>
 
-        <ListBox Grid.Column="1">
+        <ListBox Grid.Column="1" Name="lbxFiles">
             <ListBoxItem>Test 1</ListBoxItem>
             <ListBoxItem>Test 2</ListBoxItem>
             <ListBoxItem>Test 3</ListBoxItem>
         </ListBox>
 
-        <StackPanel Grid.Column="2" Orientation="Vertical">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Title</TextBlock>
-                <TextBox>Test</TextBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Album</TextBlock>
-                <TextBox>Test</TextBox>
-                <CheckBox></CheckBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Artist</TextBlock>
-                <TextBox>Test</TextBox>
-                <CheckBox></CheckBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Year</TextBlock>
-                <TextBox>Test</TextBox>
-                <CheckBox></CheckBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Track #</TextBlock>
-                <TextBox>Test</TextBox>
-                <CheckBox></CheckBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock>Cover</TextBlock>
-                <TextBox>Test</TextBox>
-                <Button>Browse</Button>
-            </StackPanel>
-        </StackPanel>
+        <Grid Grid.Column="2" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="0 5 0 0">Title</TextBlock>
+            <TextBox   Grid.Row="0" Grid.Column="1" Margin="0 5 0 0" Name="tbxTitle">Test</TextBox>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="0 5 0 0">Album</TextBlock>
+            <TextBox   Grid.Row="1" Grid.Column="1" Margin="0 5 0 0" Name="tbxAlbum">Test</TextBox>
+            <CheckBox  Grid.Row="1" Grid.Column="2" Margin="0 5 0 0" Name="cbxAlbum"></CheckBox>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="0 5 0 0">Artist</TextBlock>
+            <TextBox   Grid.Row="2" Grid.Column="1" Margin="0 5 0 0" Name="tbxArtist">Test</TextBox>
+            <CheckBox  Grid.Row="2" Grid.Column="2" Margin="0 5 0 0" Name="cbxArtist"></CheckBox>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Margin="0 5 0 0">Year</TextBlock>
+            <TextBox   Grid.Row="3" Grid.Column="1" Margin="0 5 0 0" Name="tbxYear">Test</TextBox>
+            <CheckBox  Grid.Row="3" Grid.Column="2" Margin="0 5 0 0" Name="cbxYear"></CheckBox>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Margin="0 5 0 0">Track #</TextBlock>
+            <TextBox   Grid.Row="4" Grid.Column="1" Margin="0 5 0 0" Name="tbxTrackNo">Test</TextBox>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Margin="0 5 0 0">Cover</TextBlock>
+            <TextBox   Grid.Row="5" Grid.Column="1" Margin="0 5 0 0" Name="tbxCover">Test</TextBox>
+            <Button    Grid.Row="5" Grid.Column="2" Margin="1 5 0 0" Name="btnBrowseCover">Browse</Button>
+        </Grid>
     </Grid>
 </Window>

@@ -21,7 +21,7 @@ namespace windows_music_metadata_editor
         {
             InitializeComponent();
 
-            test();
+            //test();
         }
 
         public void test()
