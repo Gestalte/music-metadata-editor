@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:windows_music_metadata_editor"
         mc:Ignorable="d"
-        Title="Music Meta-data Editor" MinHeight="200" MinWidth="600" Height="200" Width="600">
+        Title="Music Meta-data Editor" MinHeight="400" MinWidth="900" Height="200" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"></ColumnDefinition>
-            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
@@ -21,11 +21,7 @@
             </TreeViewItem>
         </TreeView>
 
-        <ListBox Grid.Column="1" Name="lbxFiles">
-            <ListBoxItem>Test 1</ListBoxItem>
-            <ListBoxItem>Test 2</ListBoxItem>
-            <ListBoxItem>Test 3</ListBoxItem>
-        </ListBox>
+        <ListBox Grid.Column="1" x:Name="lbxFiles" DisplayMemberPath="FileName" SelectionChanged="lbxFiles_SelectionChanged"/>
 
         <Grid Grid.Column="2" Margin="10">
             <Grid.ColumnDefinitions>
@@ -44,26 +40,23 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="0 5 0 0">Title</TextBlock>
-            <TextBox   Grid.Row="0" Grid.Column="1" Margin="0 5 0 0" Name="tbxTitle">Test</TextBox>
+            <TextBox   Grid.Row="0" Grid.Column="1" Margin="0 5 0 0" x:Name="tbxTitle" TextChanged="TextBox_TextChanged"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Margin="0 5 0 0">Album</TextBlock>
-            <TextBox   Grid.Row="1" Grid.Column="1" Margin="0 5 0 0" Name="tbxAlbum">Test</TextBox>
-            <CheckBox  Grid.Row="1" Grid.Column="2" Margin="0 5 0 0" Name="cbxAlbum"></CheckBox>
+            <TextBox   Grid.Row="1" Grid.Column="1" Margin="0 5 0 0" x:Name="tbxAlbum" TextChanged="TextBox_TextChanged"/>
 
             <TextBlock Grid.Row="2" Grid.Column="0" Margin="0 5 0 0">Artist</TextBlock>
-            <TextBox   Grid.Row="2" Grid.Column="1" Margin="0 5 0 0" Name="tbxArtist">Test</TextBox>
-            <CheckBox  Grid.Row="2" Grid.Column="2" Margin="0 5 0 0" Name="cbxArtist"></CheckBox>
+            <TextBox   Grid.Row="2" Grid.Column="1" Margin="0 5 0 0" x:Name="tbxArtist" TextChanged="TextBox_TextChanged"/>
 
             <TextBlock Grid.Row="3" Grid.Column="0" Margin="0 5 0 0">Year</TextBlock>
-            <TextBox   Grid.Row="3" Grid.Column="1" Margin="0 5 0 0" Name="tbxYear">Test</TextBox>
-            <CheckBox  Grid.Row="3" Grid.Column="2" Margin="0 5 0 0" Name="cbxYear"></CheckBox>
+            <TextBox   Grid.Row="3" Grid.Column="1" Margin="0 5 0 0" x:Name="tbxYear" TextChanged="TextBox_TextChanged"/>
 
             <TextBlock Grid.Row="4" Grid.Column="0" Margin="0 5 0 0">Track #</TextBlock>
-            <TextBox   Grid.Row="4" Grid.Column="1" Margin="0 5 0 0" Name="tbxTrackNo">Test</TextBox>
+            <TextBox   Grid.Row="4" Grid.Column="1" Margin="0 5 0 0" x:Name="tbxTrackNo" TextChanged="TextBox_TextChanged"/>
 
             <TextBlock Grid.Row="5" Grid.Column="0" Margin="0 5 0 0">Cover</TextBlock>
-            <TextBox   Grid.Row="5" Grid.Column="1" Margin="0 5 0 0" Name="tbxCover">Test</TextBox>
-            <Button    Grid.Row="5" Grid.Column="2" Margin="1 5 0 0" Name="btnBrowseCover">Browse</Button>
+            <TextBox   Grid.Row="5" Grid.Column="1" Margin="0 5 0 0" x:Name="tbxCover" TextChanged="TextBox_TextChanged"/>
+            <Button    Grid.Row="5" Grid.Column="2" Margin="1 5 0 0" x:Name="btnBrowseCover">Browse</Button>
         </Grid>
     </Grid>
 </Window>
