@@ -5,25 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:windows_music_metadata_editor"
         mc:Ignorable="d"
-        Title="Music Meta-data Editor" MinHeight="400" MinWidth="900" Height="200" Width="600">
+        Title="Music Meta-data Editor" MinHeight="400" MinWidth="800" Height="200" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150"></ColumnDefinition>
-            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TreeView Name="tvFolders">
-            <TreeViewItem>
-                <TextBlock>Item 1</TextBlock>
-                <TextBlock>Item 2</TextBlock>
-                <TextBlock>Item 3</TextBlock>
-            </TreeViewItem>
-        </TreeView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
 
-        <ListBox Grid.Column="1" x:Name="lbxFiles" DisplayMemberPath="FileName" SelectionChanged="lbxFiles_SelectionChanged"/>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="60"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="2" Margin="10">
+            <TextBox Grid.Column="0" x:Name="tbxPath" MaxLines="1"></TextBox>
+            <Button Grid.Column="1" x:Name="btnGo" Click="btnGo_Click">Go</Button>
+        </Grid>
+
+        <ListBox Grid.Row="1" Grid.Column="0" x:Name="lbxFiles" DisplayMemberPath="FileName" SelectionChanged="lbxFiles_SelectionChanged"/>
+
+        <Grid Grid.Row="1" Grid.Column="1" Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="60"></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
